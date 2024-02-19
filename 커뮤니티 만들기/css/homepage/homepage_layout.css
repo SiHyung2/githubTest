@@ -1,0 +1,40 @@
+.wrapper{
+    display : grid;
+    grid-template-columns: 3fr 7fr 2fr;
+    grid-template-rows: 2fr 1fr 1fr 4fr 1fr 4fr;
+}
+/* 메인 헤더를 제외한 css */
+.wrapper>*:not(#main){
+    margin-left: 30px;
+    margin-right: 30px;
+}
+#login{
+    grid-area:2/1/4/2;
+}
+
+#asd{
+    background-color: #333333;
+    grid-area:1/1/1/2;
+}
+#mainbar{
+    grid-area:2/2/4/3;
+}
+#search{
+    grid-area:2/3/3/4;
+}
+#link{
+    grid-area:4/1/6/2;
+}
+#popular{
+    grid-area:4/2/5/3;
+}
+#notification{
+    grid-area:3/3/6/4;
+}
+#infomation{
+    grid-area:6/1/7/2;
+}
+#freedom{
+    grid-area:5/2/7/3;
+}
+#game{grid-area:6/3/7/4;  }
