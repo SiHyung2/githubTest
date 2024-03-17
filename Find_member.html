@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>아이디, 비밀번호 찾기</title>
+<link rel="stylesheet" href="./resources/css/member/Find_member.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function() {
+        $('.password_finder a').click(function() {
+            $('.mobile_verification_id').hide();
+            $('.email_verification_id').hide();
+
+            $('.mobile_verification_passward').show();
+            $('.email_verification_passward').show();
+            $('.password_finder a').show().fadeOut(100).fadeIn(100);
+            $('.id_finder a').css('border-bottom', 'none'); // 이전에 활성화된 링크 스타일 제거
+            $(this).css('border-bottom', '2px solid rgb(243, 156, 18)'); // 현재 활성화된 링크에 스타일 적용
+
+
+            return false;
+        });
+        $('.id_finder a').click(function() {
+            $('.mobile_verification_id').show();
+            $('.email_verification_id').show();
+
+            $('.mobile_verification_passward').hide();
+            $('.email_verification_passward').hide();
+            $('.id_finder a').show().fadeOut(100).fadeIn(100);
+
+            $('.password_finder a').css('border-bottom', 'none'); // 이전에 활성화된 링크 스타일 제거
+            $(this).css('border-bottom', '2px solid rgb(243, 156, 18)'); // 현재 활성화된 링크에 스타일 적용
+
+
+            return false;
+        });
+
+        // 활성화된 링크 스타일 적용
+       
+
+    });
+</script>
+</head>
+<body>
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="left-triangle">
+                <img style="cursor: pointer;" src="../resources/image/home.png"
+                    onclick="location.href='../homepage.jsp'" alt="홈">
+            </div>
+            <div class="right-triangle">
+                <img style="cursor: pointer;" src="../resources/image/back.png"
+                    onclick="history1()" alt="뒤로">
+            </div>
+        </header>
+        <div class="title-box">
+            <div class="id_finder">
+                <a>아이디 찾기</a>
+            </div>
+            <div class="password_finder"> <!-- 수정된 부분 -->
+                <a>비밀번호 찾기</a>
+            </div>
+
+
+
+            
+        </div>
+       
+        <div class="mobile_verification"> 
+            <!-- 아이디 찾기 영역 -->
+            <div class="mobile_verification_id">모바일 인증 영역 id</div>
+            <!-- 비밀번호 찾기 영역 -->
+            <div class="mobile_verification_passward">모바일 인증 영역 passward</div>
+        </div>
+        <div class="email_verification"> 
+             <!-- 아이디 찾기 영역 -->
+            <div class="email_verification_id">이메일 인증 영역 id</div>
+            <!-- 비밀번호 찾기 영역 -->
+            <div class="email_verification_passward">이메일 인증 영역 passward</div>
+        </div>
+        
+
+
+       
+        
+        
+    </div>
+</body>
+</html>
