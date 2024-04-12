@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h3>전체보기(LIST)      /  <a href="/write_form/">글쓰기</a></h3>
+
+        <!-- <table border="1"></table> -->
+        <table>
+            <thead>
+                <th>번호</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>첨부파일</th>
+                <th>파일 이미지</th>
+                <th>다운로드</th>
+            </thead>
+            <tbody>
+            {% for board in boardList%}
+                <tr>
+                    <th>{{board.idx}}</th>
+                    <th>{{board.title}}</th>
+                    <th>{{board.writer}}</th>
+                    <th>{{board.post_date}}</th>
+                    <th>{{board.hit}}</th>
+                    <th>{{board.filename}}</th>
+                    <th>{{board.filesize}}</th>
+                    <th>{{board.down}}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+</body>
+</html>
