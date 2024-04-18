@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>상세보기  //  <a href="/list.html"></a></h3>
+    id : {{dto.idx}}<br/>
+    hit : {{dto.hit}}<br/>
+    writer : {{dto.writer}}<br/>
+    title : {{dto.title}}<br/>
+    contnet : {{dto.content}}<br/>
+    date : {{dto.date}}<br/>
+    file : {{dto.filename}}<br/>
+    <a href="/update_form/{{dto.idx}}">수정 폼으로</a> <br/>
+    <a href="/delete/{{dto.idx}}">삭제</a>
+    /// <a href="/delete_idx?idx={{dto.idx}}">삭제</a>
+    
+    <h4>Comment</h4>
+    <h4>Comment</h4>
+    <form action="/comment_insert/" method="post">
+        <input type="hidden" name="idx" value="{{dto.idx}}" />
+        <textarea name="content" rows="5" cols="50"
+        placeholder="CommentInsert"></textarea>
+        <input type="submit" value="댓글전송">
+    </form>
+</body>
+</html>

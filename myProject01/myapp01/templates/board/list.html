@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <script src="{% static 'jquery-3.7.1.min.js' %}"></script>
+</head>
+<body>
+        <h3>전체보기{{boardCount}}   {{startPage}} {{endPage}}    /  <a href="/write_form/">글쓰기</a></h3>
+
+        <!-- <table border="1"></table> -->
+        <table border="1">
+            <thead>
+                <th>번호</th>
+                <th>작성자</th>
+                <th>작성일</th>
+                <th>조회수</th>
+                <th>첨부파일</th>
+                <th>파일 이미지</th>
+                <th>다운로드</th>
+            </thead>
+            <tbody>
+            {% for board in boardList%}
+                <tr>
+                    <td><a href="/detail_idx?idx={{board.idx}}">{{board.title}}
+                      //  <a href="/detail/{{board.idx}}">{{board.idx}}</a></td>
+                    <td> {{board.title}}</td>
+                    <td>{{board.writer}}</td>
+                    <td>{{board.post_date|date:"Y-m-d H:i"}}</td>
+                    <td>{{board.hit}}</td>
+                    <td>{{board.filename}}</td>
+                    <td>
+                        {% if board.filesize > 0 %}
+                        <span class="_imgs" data-url="/download_count?idx={{board.idx}}">
+                            <img src="{% static 'images/file.png' %}">
+                        </span>
+                        {% endif %}
+                    </td>
+                    <th>{{board.filesize}}</th>
+                    <th class="downCnt">{{board.down}}</th>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        {% if startPage > blockPage %}
+        <a href="?page={{startPage|add:-3}}">이전</a>
+        {% endif %}
+
+        {% for i in range %}
+            <a href='/list?page={{i}}''>{{i}}</a> 
+        {% endfor %}
+
+        {% if endPage < totalPage %}
+        <a href='?page={{endPage|add:1}}'>다음</a>
+        {% endif %}
+        
+</body>
+<script>
+    $("._imgs").on("click", function(){
+        _imgs=$(this)
+        $.ajax({
+            url : $(this).data('url'),
+            type : 'GET',
+            success : function(data){
+                alert(data.idx + " : "+ data.count)
+                _imgs.parent().parent().find('.downCnt').text(data.count)
+            }
+        })
+    
+    })
+
+
+</script>
+</html>

@@ -20,5 +20,16 @@ from myapp01 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.write_form),
+     path('write_form/', views.write_form),
     path('insert/', views.insert),
+    path('list/', views.list),
+    path('detail_idx/', views.detail_idx),
+    path('detail/<int:board_idx>/', views.detail),
+    path('delete/<int:board_idx>', views.delete),
+    path('delete_idx/', views.delete_idx),
+    path('update_form/<int:board_idx>', views.update_form),
+    path('update/', views.update),
+    path('download_count/',views.download_count),
+    path('comment_insert/',views.comment_insert)
+    
 ]
