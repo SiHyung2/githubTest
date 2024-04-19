@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-3">
+        <a href="#" class="btn btn-warning">수정</a>
+        <form action="#" method="post" style="display:inline-block">
+            <button id="#" class="btn btn-danger" type="submit">삭제</button>
+        </form>
+
+    <br><br>
+    <div>
+        게시물 번호 : {{dto.idx}}     //     <span>작성자 : <i>{{dto.writer}}</i> </span>
+        //      <span>hit : {{dto.hit}}</span>
+    </div>
+    <br><hr>
+    <div>
+        <h3>제목 </h3>
+        <h3>{{dto.title}}</h3>
+    </div>
+    <hr>
+    <div>
+        <p>내용</p>
+        <div>{{dto.content}}</div>
+    </div>
+
+    <div class="card">
+        <form action="card-body">
+            <div>
+                <span>reply</span>
+                <textarea name="reply-content" id="" rows="1"></textarea>
+            </div>
+            <div class="card-footer">
+                <button type="button" class="btn btn-primary">등록</button>
+            </div>
+        </form>
+    </div>
+
+    <h3> <a href="/list/">전체 보기</a></h3>
+        id : {{dto.idx}}<br/>
+        hit : {{dto.hit}}<br/>
+        writer : {{dto.writer}}<br/>
+        title : {{dto.title}}<br/>
+        contnet : {{dto.content}}<br/>
+        date : {{dto.date}}<br/>
+        file : {% if dto.filesize > 0 %}
+        <!-- <span class="_imgs" data-url="/download_count?idx={{board.idx}}"> -->
+            <!-- <img src="{% static 'images/file.jpg' %}"> -->
+        <!-- </span> -->
+        {% endif %}
+</div>
+{% endblock %}
