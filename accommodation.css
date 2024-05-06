@@ -1,0 +1,93 @@
+*{
+    border: 1px solid black;
+}
+
+
+.container{
+    margin-left: 300px;
+}
+
+.container>header{
+    width: 900px;
+    height: 350px;
+    border: 3px solid blue;
+}
+
+header>.accommodation_image{
+    width: 350px;
+    height: 100%;
+    float: left;
+}
+
+header>.accommodation_content{
+    float: left;
+}
+
+header .accommodation_title{
+    width: 500px;
+    height: 70px;
+}
+
+header .accommodation_information{
+    width: 500px;
+    height: 60px;
+}
+
+header .accommodation_date{
+    width: 500px;
+    height: 150px;
+}
+
+header .date_button{
+    width: 500px;
+    height: 60px;
+}
+
+.container>.section_contianer{
+    width: 900px;
+    /* height: auto; */
+    height: 1000px; 
+}
+
+.section_contianer>.room_review_tab{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.section_contianer>.room_view{
+    width: 100%;
+    height: 150px;
+}
+
+.room_view>.room_image{
+    width: 170px;
+    height: 100%;
+    float: left;
+}
+
+.room_view>.room_number{
+    width: 700px;
+    height: 30px;
+    float: left;
+}
+
+.room_view>.room_infomation{
+    width: 500px;
+    height: 60px;
+    float: left;
+}
+
+.room_view>.room_price{
+    width: 500px;
+    height: 50px;
+    float: left;
+    border: 2px solid blue;
+}
+
+/* .room_view>.room_price{
+    width: 100px;
+    height: 50px;
+    /* float: right; */
+    border: 2px solid red;
+} */
